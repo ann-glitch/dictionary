@@ -11,7 +11,7 @@ def wordfinder(word):
         return my_data[word]
 
     elif len(get_close_matches(word, my_data.keys())) > 0: 
-        entry = input("Sorry did you mean {} instead? Enter Y if yes, or N if no: c".format(get_close_matches(word, my_data.keys())[0]))
+        entry = input("Sorry did you mean {} instead? Enter Y if yes, or N if no: ".format(get_close_matches(word, my_data.keys())[0]))
 
         if entry == "Y":
             return my_data[get_close_matches(word, my_data.keys())[0]]
@@ -31,6 +31,7 @@ word = input("Please enter a word you'd like to know about: ")
 
 output = wordfinder(word)
 
+# return each definitions on a new line.
 if type(output) == list:
     for item in output:
         print(item)
